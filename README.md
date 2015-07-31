@@ -130,7 +130,7 @@ The following information is divded into two sections, whether you are using the
 
 To use the application be sure to have deployed the quickstart in fabric8 as described above. Successful deployment will create and start a Camel route in fabric8.
 
-[[Make sure your Hadoop Name Node is listening on localhost:8020 or change the address on camel-context.xml. Check also the permission for /tmp/fuse directory on hdfs]]
+**Make sure your Hadoop Name Node is listening on localhost:8020 or change the address into camel-context.xml. Check also the permission for /tmp/fuse directory on hdfs**
 
 1. As soon as the Camel route has been started, you will see a directory `instances/mychild/work/jms/input` in your fabric8 installation.
 1. Copy the files you find in this quickstart's `src/main/fabric8/data` directory to the newly created `instances/mychild/work/jms/input` directory.
