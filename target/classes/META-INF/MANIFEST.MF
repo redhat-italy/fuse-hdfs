@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1438346545266
+Build-Jdk: 1.7.0_75
+Build-Timestamp: Fri, 31 Jul 2015 14:42:23 +0200
+Built-By: samuele
+Bundle-Description: ActiveMQ and Camel Example
+Bundle-DocURL: http://fabric.fusesource.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: JBoss Fuse Quickstart: camel-hdfs
+Bundle-SymbolicName: org.jboss.quickstarts.fuse.camel-hdfs
+Bundle-Vendor: Red Hat
+Bundle-Version: 1.2.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: *
+Embed-Dependency: !*
+Embed-Transitive: false
+Implementation-Title: JBoss Fuse Quickstart: camel-hdfs
+Implementation-URL: http://www.jboss.org/products/fuse/camel-hdfs
+Implementation-Vendor: Red Hat
+Implementation-Vendor-Id: org.jboss.quickstarts.fuse
+Implementation-Version: 1.2.0-SNAPSHOT
+Import-Package: org.osgi.service.blueprint;version="[1.0.0,2.0.0)"
+Java-Vendor: Oracle Corporation
+Java-Version: 1.7.0_75
+Os-Arch: x86_64
+Os-Name: Mac OS X
+Os-Version: 10.10.4
+Scm-Connection: scm:git:git@github.com:jboss-fuse/fuse.git/camel-hdfs
+Scm-Revision: UNKNOWN
+Scm-Url: https://github.com/jboss-fuse/fuse/tree/master/quickstarts/came
+ l-hdfs
+Specification-Title: JBoss Fuse Quickstart: camel-hdfs
+Specification-Vendor: Red Hat
+Specification-Version: 1.2.0-SNAPSHOT
+Tool: Bnd-1.50.0
