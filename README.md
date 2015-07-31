@@ -1,11 +1,11 @@
-camel-amq: Demonstrates how to use the camel-amq component
+camel-hdfs: Demonstrates how to use the camel-amq component
 ======================================================
-Author: Fuse Team  
+Author: Samuele Dell'Angelo  
 Level: Beginner  
 Technologies: Camel, ActiveMQ  
-Summary: This quickstart demonstrates how to use the camel-amq component o connect to the local A-MQ broker and use JMS messaging between two Camel routes.  
+Summary: This quickstart demonstrates how to use the camel-hdfs2 component o connect to the local A-MQ broker and use JMS messaging between two Camel routes and save files to hdfs filesystem.  
 Target Product: Fuse  
-Source: <https://github.com/jboss-fuse/quickstarts>  
+Source: <https://github.com/redhat-italy/fuse-hdfs>  
 
 
 What is it?
@@ -45,12 +45,12 @@ To try the example you do not need to build from source first. Although building
 
 To build from the source code:
 
-1. Change your working directory to `quickstarts/camel-amq` directory.
+1. Change your working directory to `quickstarts/fuse-hdfs` directory.
 1. Run `mvn clean install` to build the quickstart.
 
 After building from the source code, you can upload the changes to the fabric container:
 
-1. Change your working directory to `quickstarts/camel-amq` directory.
+1. Change your working directory to `quickstarts/fuse-hdfs` directory.
 1. Run `mvn fabric8:deploy` to upload the quickstart to the fabric container.
 
 If you run the `fabric:deploy` command for the first then, it will ask you for the username and password to login the fabric container.
@@ -81,10 +81,10 @@ You can deploy a new A-MQ broker from the console command line, as follows:
 
 After installing the A-MQ broker we can install the example from the console command line, as follows:
 
-1. Create a new child container and deploy the `quickstarts-camel.amq` profile in a single step, by entering the
+1. Create a new child container and deploy the `quickstarts-camel.hdfs` profile in a single step, by entering the
  following command at the console. Notice we have add `--profile mq-client-mygroup` so the client connects to correct A-MQ group; as you can have multiple broker groups in fabric8.
 
-        fabric:container-create-child --profile quickstarts-camel.amq --profile mq-client-mygroup root mychild
+        fabric:container-create-child --profile quickstarts-camel.hdfs --profile mq-client-mygroup root mychild
 
 1. Wait for the new child container, `mychild`, to start up. Use the `fabric:container-list` command to check the status of the `mychild` container and wait until the `[provision status]` is shown as `success`.
 
@@ -113,7 +113,7 @@ After installing the A-MQ broker we can install the example from the web console
 1. It is assumed that you have already created a fabric and are logged into a container called `root`.
 1. Login the web console
 1. Click the Wiki button in the navigation bar
-1. Select `quickstarts` --> `camel.amq`
+1. Select `quickstarts` --> `camel.hdfs`
 1. Click the `New` button in the top right corner
 1. In the Create New Container page, in the profiles filter field enter `my` and select the `mq-client-mygroup` from the list, as shown in the figure below. We do this so the client connects to correct A-MQ group; as you can have multiple broker groups in fabric8.
 
@@ -130,16 +130,14 @@ The following information is divded into two sections, whether you are using the
 
 To use the application be sure to have deployed the quickstart in fabric8 as described above. Successful deployment will create and start a Camel route in fabric8.
 
+[[Make sure your Hadoop Name Node is listening on localhost:8020 or change the address on camel-context.xml. Check also the permission for /tmp/fuse directory on hdfs]]
+
 1. As soon as the Camel route has been started, you will see a directory `instances/mychild/work/jms/input` in your fabric8 installation.
 1. Copy the files you find in this quickstart's `src/main/fabric8/data` directory to the newly created `instances/mychild/work/jms/input` directory.
-1. Wait a few moments and you will find the same files organized by country under the `instances/mychild/work/jms/output` directory.
-  * `order1.xml` in `work/jms/output/others`
-  * `order2.xml` and `order4.xml` in `work/jms/output/uk`
-  * `order3.xml` and `order5.xml` in `work/jms/output/us`
+1. Wait a few moments and you will find the same files saved in your hdfs.
 
 1. Use `log:display` to check out the business logging.
         Receiving order order1.xml
-        Sending order order1.xml to another country
         Done processing order1.xml
 
 ### Using the web console
