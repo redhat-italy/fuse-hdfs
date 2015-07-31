@@ -1,4 +1,4 @@
-camel-hdfs: Demonstrates how to use the camel-amq component
+camel-hdfs: Demonstrates how to use the camel-hdfs2 component
 ======================================================
 Author: Samuele Dell'Angelo  
 Level: Beginner  
